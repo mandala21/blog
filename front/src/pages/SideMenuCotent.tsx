@@ -1,6 +1,10 @@
 import React from "react";
 import ProgressBar from "../components/ProgressBar";
 import styled from "styled-components";
+import  IconGit from "../assets/icon-git.svg";
+import  IconGo from "../assets/icon-go.svg";
+import  IconInsta from "../assets/icon-insta.svg";
+import  IconTwitter from "../assets/icon-twitter.svg";
 
 type LinkItemProps = {
     label: string,
@@ -19,7 +23,12 @@ const HastagTitle = styled.span`
 
 const LinkItem: React.FC<LinkItemProps> = ({ label, href, icon }) => {
     return (
-        <p>Link</p>
+        <a className="flex justify-between border border-gray-400 p-2 rounded-lg bg-white mb-2" href={href} target="_blank mb-8">
+            <div className="flex">
+                {icon} <span className="ml-4">{label}</span>
+            </div>
+            <img src={IconGo} />
+        </a>
     )
 }
 
@@ -31,9 +40,27 @@ const TitleMenu : React.FC<TitleMenuProps>= ({ title }) => {
     )
 }
 
+const links: LinkItemProps[] = [
+    {
+        href: 'https://github.com/mandala21',
+        icon: (<img src={IconGit} />),
+        label: 'GitHub'
+    },
+    {
+        href: 'https://www.instagram.com/lucasres1/',
+        icon: (<img src={IconInsta} />),
+        label: 'Instagram'
+    },
+    {
+        href: 'https://twitter.com/llucasres',
+        icon: (<img src={IconTwitter} />),
+        label: 'Twitter'
+    },
+]
+
 function SideMenuCotent() {
     return (
-        <div className="border border-black px-8 mt-8">
+        <div className="px-8 mt-8">
             {/* header */}
             <div className="flex mb-4">
                 <div className="w-16 h-16 rounded-full bg-gray-400"></div>
@@ -45,6 +72,9 @@ function SideMenuCotent() {
             </div>
             {/* Links */}
             <TitleMenu title="Redes Sociais" />
+            {links.map((el) => (
+                <LinkItem {...el} />
+            ))}
         </div>
     );
 }
