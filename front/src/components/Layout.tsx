@@ -7,7 +7,7 @@ type SideMenuProps = {
 
 export const SideMenu = styled.div<SideMenuProps>`
     width: 24rem;
-    position: fixed;
+    position: absolute;
     transition: all .25s ease;
 
     @media(max-width: 800px) {

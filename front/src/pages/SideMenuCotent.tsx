@@ -5,6 +5,11 @@ import  IconGit from "../assets/icon-git.svg";
 import  IconGo from "../assets/icon-go.svg";
 import  IconInsta from "../assets/icon-insta.svg";
 import  IconTwitter from "../assets/icon-twitter.svg";
+import  SkillCert from "../assets/skill-cert.svg";
+import  SkillPhp from "../assets/skill-php.svg";
+import  SkillPython from "../assets/skill-python.svg";
+import  SkillTs from "../assets/skill-ts.svg";
+import SkillItem, { SkillItemProps } from "../components/SkillItem";
 
 type LinkItemProps = {
     label: string,
@@ -15,6 +20,48 @@ type LinkItemProps = {
 type TitleMenuProps = {
     title: string,
 }
+
+const links: LinkItemProps[] = [
+    {
+        href: 'https://github.com/mandala21',
+        icon: (<img src={IconGit} />),
+        label: 'GitHub'
+    },
+    {
+        href: 'https://www.instagram.com/lucasres1/',
+        icon: (<img src={IconInsta} />),
+        label: 'Instagram'
+    },
+    {
+        href: 'https://twitter.com/llucasres',
+        icon: (<img src={IconTwitter} />),
+        label: 'Twitter'
+    },
+]
+
+const skills: SkillItemProps[] = [
+    {
+        icon: (<img src={SkillCert} />),
+        description: 'Graduado pela UESPI em 2018',
+        title: 'Cientista da computação'
+    },
+    {
+        icon: (<img src={SkillPhp} />),
+        title: 'PHP/Laravel',
+        description: 'PHP selvagem foi minha primera linguagem, 3 anos com laravel',
+    },
+    {
+        icon: (<img src={SkillPython} />),
+        title: 'Python/Django',
+        description: 'Python me segue desde a universidade',
+    },
+    {
+        icon: (<img src={SkillTs} />),
+        title: 'React/Typescript',
+        description: 'Usei muito jquery, mas chegou a hora de mudar',
+    },
+]
+
 
 const HastagTitle = styled.span`
     color: #F8A5C2;
@@ -40,24 +87,6 @@ const TitleMenu : React.FC<TitleMenuProps>= ({ title }) => {
     )
 }
 
-const links: LinkItemProps[] = [
-    {
-        href: 'https://github.com/mandala21',
-        icon: (<img src={IconGit} />),
-        label: 'GitHub'
-    },
-    {
-        href: 'https://www.instagram.com/lucasres1/',
-        icon: (<img src={IconInsta} />),
-        label: 'Instagram'
-    },
-    {
-        href: 'https://twitter.com/llucasres',
-        icon: (<img src={IconTwitter} />),
-        label: 'Twitter'
-    },
-]
-
 function SideMenuCotent() {
     return (
         <div className="px-8 mt-8">
@@ -74,7 +103,13 @@ function SideMenuCotent() {
             <TitleMenu title="Redes Sociais" />
             {links.map((el) => (
                 <LinkItem {...el} />
-            ))}
+                ))}
+            <TitleMenu title="Skills" />
+            <div>
+                {skills.map((el) => (
+                    <SkillItem {...el} />
+                ))}
+            </div>
         </div>
     );
 }
