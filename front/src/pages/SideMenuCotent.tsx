@@ -24,39 +24,39 @@ type TitleMenuProps = {
 const links: LinkItemProps[] = [
     {
         href: 'https://github.com/mandala21',
-        icon: (<img src={IconGit} />),
+        icon: (<img src={IconGit} alt="perfil github" />),
         label: 'GitHub'
     },
     {
         href: 'https://www.instagram.com/lucasres1/',
-        icon: (<img src={IconInsta} />),
+        icon: (<img src={IconInsta} alt="perfil instragram" />),
         label: 'Instagram'
     },
     {
         href: 'https://twitter.com/llucasres',
-        icon: (<img src={IconTwitter} />),
+        icon: (<img src={IconTwitter} alt="perfil twitter" />),
         label: 'Twitter'
     },
 ]
 
 const skills: SkillItemProps[] = [
     {
-        icon: (<img src={SkillCert} />),
+        icon: (<img src={SkillCert} alt="formação em ciencia da computação" />),
         description: 'Graduado pela UESPI em 2018',
         title: 'Cientista da computação'
     },
     {
-        icon: (<img src={SkillPhp} />),
+        icon: (<img src={SkillPhp} alt="php com framework laravel" />),
         title: 'PHP/Laravel',
         description: 'PHP selvagem foi minha primera linguagem, 3 anos com laravel',
     },
     {
-        icon: (<img src={SkillPython} />),
+        icon: (<img src={SkillPython} alt="python com o framework django" />),
         title: 'Python/Django',
         description: 'Python me segue desde a universidade',
     },
     {
-        icon: (<img src={SkillTs} />),
+        icon: (<img src={SkillTs} alt="typescript com o framework react" />),
         title: 'React/Typescript',
         description: 'Usei muito jquery, mas chegou a hora de mudar',
     },
@@ -74,7 +74,7 @@ const LinkItem: React.FC<LinkItemProps> = ({ label, href, icon }) => {
             <div className="flex">
                 {icon} <span className="ml-4">{label}</span>
             </div>
-            <img src={IconGo} />
+            <img src={IconGo} alt="visitar link" />
         </a>
     )
 }
