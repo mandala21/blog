@@ -17,7 +17,6 @@ const SearchContainer = styled.div`
     display: flex;
     position: relative;
     padding: 0 1rem;
-    z-index: 5;
 `
 
 const InputSearch = styled.input`
@@ -33,7 +32,6 @@ const ResultContainer = styled.div`
     width: 100%;
     height: auto;
     background: #ffffff;
-    z-index: 5;
     top: 2.1rem;
     left: 0;
     border-radius: 0px 0px 10px 10px;
@@ -41,17 +39,6 @@ const ResultContainer = styled.div`
     border-top: 0;
     padding: 0.5rem 1rem;
     box-shadow: 0px 1rem 1rem rgba(0, 0, 0, 0.25);
-`;
-
-const BackgroundShadown = styled.div`
-    position:fixed;
-    z-index: 2;
-    top: 0;
-    left: 0;
-    background: rgba(101, 108, 133, 0.8);
-    opacity: 0.24;
-    width: 100vw;
-    height: 100vh;
 `;
 
 const ResultItem: React.FC<ResultItemProps> = ({ title, description }) => {
@@ -87,7 +74,6 @@ const Search: React.FC = () => {
 
     return (
         <div>
-            {open && <BackgroundShadown onClick={handleCloseSearch} />}
             <SearchContainer>
                 <InputSearch placeholder="Porcurando por algo?" onChange={handleOnChange} value={search} />
                 <img src={IconSearch} alt="pesquise por algo" />

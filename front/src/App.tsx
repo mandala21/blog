@@ -3,6 +3,7 @@ import { BrowserRouter } from "react-router-dom";
 import { Content, SideMenu } from './components/Layout';
 import SideMenuCotent from "./pages/SideMenuCotent";
 import Router from "./config/Router";
+import SideMobileContent from "./pages/SideMenuMobileContent";
 
 function App() {
   const [openMenu, setOpenMenu] = useState(false);
@@ -11,6 +12,7 @@ function App() {
     <BrowserRouter>
       <SideMenu open={openMenu}>
         <SideMenuCotent />
+        <SideMobileContent openMenuClick={()=>setOpenMenu(!openMenu)} />
       </SideMenu>
       <Content>
         <Router />

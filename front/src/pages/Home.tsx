@@ -3,7 +3,7 @@ import Search from "../components/Search";
 
 const Home = () => {
     return (
-        <div className="pt-8">
+        <div>
             <Search />
         </div>
     );
