@@ -9,7 +9,7 @@ export const RoutesDefinitations = {
 const Router = () => {
     return (
         <Switch>
-            <div className="mx-32">
+            <div className="mx-4 md:mx-32">
                 <Route path={RoutesDefinitations.HOME.path} component={Home}  />
             </div>
         </Switch>
