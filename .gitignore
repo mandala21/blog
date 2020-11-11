@@ -1,1 +1,2 @@
 front/src/styles/tailwind.output.css
+nginx/conf.d/front.conf

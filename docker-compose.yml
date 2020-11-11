@@ -1,0 +1,16 @@
+version: "3.5"
+services: 
+    front:
+        build: ./front
+        container_name: front_blog
+        volumes: 
+            - ./front:/app
+    
+    webserver:
+        image: nginx
+        volumes: 
+            - ./nginx/conf.d:/etc/nginx/conf.d
+            - ./front/build:/usr/share/nginx/html
+        ports: 
+            - 80:80
+            #- 443:433
