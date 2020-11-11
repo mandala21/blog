@@ -106,8 +106,8 @@ function SideMenuCotent() {
                 ))}
             <TitleMenu title="Skills" />
             <div>
-                {skills.map((el) => (
-                    <SkillItem {...el} />
+                {skills.map((el,i) => (
+                    <SkillItem key={i} {...el} />
                 ))}
             </div>
         </div>

@@ -1,2 +1,2 @@
 #!bin/bash
-yarn install && yarn build
+yarn install && yarn build && yarn start

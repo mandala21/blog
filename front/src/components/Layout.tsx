@@ -1,8 +1,15 @@
-import styled from "styled-components";
+import { useState } from "react";
+import styled, { createGlobalStyle } from "styled-components";
+import SideMenuCotent from "../pages/SideMenuCotent";
+import SideMenuMobileContent from "../pages/SideMenuMobileContent";
 
 type SideMenuProps = {
     open?: boolean
 }
+
+interface BaseLayoutProps {
+    theme: 'white'|'dark'
+} 
 
 export const SideMenu = styled.div<SideMenuProps>`
     width: 24rem;
@@ -43,3 +50,25 @@ export const SideMenuMobile = styled.div`
         display: block;
     }
 `
+export const BaseLayout = createGlobalStyle<BaseLayoutProps>`
+    body {
+        background: ${props => props.theme === 'white' ? '#EEF0F1' : '#191C36'};
+    }
+`
+
+export const Layout: React.FC = ({ children }) => {
+    const [openMenu, setOpenMenu] = useState(false)
+
+    return (
+        <>
+            <BaseLayout theme="white" />
+            <SideMenu open={openMenu}>
+                <SideMenuCotent />
+                <SideMenuMobileContent openMenuClick={()=>setOpenMenu(!openMenu)} />
+            </SideMenu>
+            <Content>
+                {children}
+            </Content>
+        </>
+    )
+}
