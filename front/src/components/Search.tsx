@@ -7,17 +7,24 @@ interface ResultItemProps {
     description?: string,
 }
 
+interface SearchProps {
+    className?: string
+}
+
 const SearchContainer = styled.div`
     height: 2.625rem;
     background: #FFF;
-    width: 90%;
     border-radius: 0.625rem;
     border: 1px solid #cbd5e0;
     box-shadow: 0px 0px 2.625rem rgba(0, 0, 0, 0.25);
     display: flex;
     position: relative;
     padding: 0 1rem;
-    margin: 0 auto;
+    margin: 0 4rem;
+
+    @media(max-width: 800px){
+        margin: 0 1rem;
+    }
 `
 
 const InputSearch = styled.input`
@@ -55,7 +62,7 @@ const ResultItem: React.FC<ResultItemProps> = ({ title, description }) => {
     )
 }
 
-const Search: React.FC = () => {
+const Search: React.FC<SearchProps> = ({ className }) => {
     const [open, setOpen] = useState(false)
     const [search, setSearch] = useState('')
 
@@ -74,7 +81,7 @@ const Search: React.FC = () => {
     }
 
     return (
-        <div>
+        <div className={className}>
             <SearchContainer>
                 <InputSearch placeholder="Porcurando por algo?" onChange={handleOnChange} value={search} />
                 <img src={IconSearch} alt="pesquise por algo" />
