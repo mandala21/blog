@@ -19,19 +19,21 @@ export const SideMenu = styled.div<SideMenuProps>`
     min-height: 100vh;
 
     @media(max-width: 800px) {
-        left: ${props => props.open ? '0rem' : '-24rem'};
+        left: ${props => props.open ? '0rem' : '-100vw'};
         background: #fff;
         padding-top: 2rem;
+        width: 100vw;
     }
 `
 
-export const Content = styled.div`
+export const Content = styled.div<SideMenuProps>`
     margin-left: 24rem;
     padding-top: 2rem;
 
     @media(max-width: 800px) {
         padding-top: 6rem;
-        margin-left: 0
+        margin-left: 0;
+        display: ${props => props.open ? 'none' : 'block'}
     }
 `
 
@@ -66,7 +68,7 @@ export const Layout: React.FC = ({ children }) => {
                 <SideMenuCotent />
                 <SideMenuMobileContent openMenuClick={()=>setOpenMenu(!openMenu)} />
             </SideMenu>
-            <Content>
+            <Content open={openMenu}>
                 {children}
             </Content>
         </>
