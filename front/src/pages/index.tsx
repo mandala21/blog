@@ -12,7 +12,11 @@ const index: React.FC = () => {
                 <YearTitle>
                     #2020
                 </YearTitle>
-                <CardPost />
+                <CardPost title="Postagem de Teste"
+                    labels={['História']}
+                    time={'10 min'}
+                    preview="Descrição rapida sobre o texto..."
+                    created_at={'2020-11-28'} />
             </div>
         </Layout>
     )
