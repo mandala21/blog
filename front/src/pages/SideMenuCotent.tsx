@@ -54,7 +54,7 @@ const skills: SkillItemProps[] = [
     },
     {
         icon: (<img src={SkillTs} alt="typescript com o framework react" />),
-        title: 'React/Typescript',
+        title: 'Typescript/React',
     },
 ]
 
@@ -87,12 +87,11 @@ function SideMenuCotent() {
     return (
         <div className="px-8 mt-8">
             {/* header */}
-            <div className="flex mb-4">
+            <div className="flex mb-4 items-center">
                 <div className="w-16 h-16 rounded-full bg-gray-400"></div>
-                <div className="flex flex-col leading-4 ml-4 mt-2 flex-1">
+                <div className="flex flex-col leading-4 ml-4 flex-1">
                     <strong className="">Lucas Resende</strong>
                     <span className="font-thin">Back/Front Dev</span>
-                    <ProgressBar progress={83} lvl={2} />
                 </div>
             </div>
             {/* Links */}

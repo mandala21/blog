@@ -43,7 +43,7 @@ const CardPost: React.FC<CardPostProps> = ({ title, created_at, labels, preview,
     const month = parseDateToBr(date, 'MMM')
     const day = parseDateToBr(date, 'dd')
     return (
-        <div className="p-8 bg-white rounded-lg border">
+        <div className="p-8 bg-white rounded-lg border hover:shadow-lg">
             <div className="flex mb-4">
                 <DateDisplay>
                     <span>{day}</span>

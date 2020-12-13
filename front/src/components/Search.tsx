@@ -20,11 +20,6 @@ const SearchContainer = styled.div`
     display: flex;
     position: relative;
     padding: 0 1rem;
-    margin: 0 4rem;
-
-    @media(max-width: 800px){
-        margin: 0 1rem;
-    }
 `
 
 const InputSearch = styled.input`
